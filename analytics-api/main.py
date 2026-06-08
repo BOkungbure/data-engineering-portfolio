@@ -1,5 +1,5 @@
 import os
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 from dotenv import load_dotenv
 import psycopg2
 from psycopg2.extras import RealDictCursor
