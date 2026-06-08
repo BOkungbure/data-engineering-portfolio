@@ -1,4 +1,5 @@
 import os
+from datetime import date
 from fastapi import FastAPI, Query
 from dotenv import load_dotenv
 import psycopg2
