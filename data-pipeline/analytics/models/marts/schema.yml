@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: mart_game_performance
+    description: "Final analytics table with approval ratings"
+    columns:
+      - name: game_name
+        data_tests:
+          - not_null
+      - name: developer
+        data_tests:
+          - not_null
+      - name: approval_pct
+        data_tests:
+          - not_null
+      - name: price
+        data_tests:
+          - not_null
