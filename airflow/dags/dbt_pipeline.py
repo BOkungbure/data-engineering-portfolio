@@ -11,17 +11,17 @@ with DAG(
 
     dbt_seed = BashOperator(
         task_id="dbt_seed",
-        bash_command="cd /path/to/my_pipeline && dbt seed"
+        bash_command="cd /C:/Users/Babs/Documents/Python/data-engineering-portfolio/data-pipeline/analytics && dbt seed"
     )
 
     dbt_run = BashOperator(
         task_id="dbt_run",
-        bash_command="cd /path/to/my_pipeline && dbt run"
+        bash_command="cd /C:/Users/Babs/Documents/Python/data-engineering-portfolio/data-pipeline/analytics && dbt run"
     )
 
     dbt_test = BashOperator(
         task_id="dbt_test",
-        bash_command="cd /path/to/my_pipeline && dbt test"
+        bash_command="cd /C:/Users/Babs/Documents/Python/data-engineering-portfolio/data-pipeline/analytics && dbt test"
     )
 
     dbt_seed >> dbt_run >> dbt_test
