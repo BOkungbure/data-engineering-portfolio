@@ -1,0 +1,24 @@
+name: dbt CI
+on:
+  push:
+    branches: [main]
+jobs:
+  dbt-run:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: dbt_user
+          POSTGRES_PASSWORD: dbt_pass
+          POSTGRES_DB: dbt_db
+        ports: ["5432:5432"]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install dbt-postgres
+      - run: dbt seed
+      - run: dbt run
+      - run: dbt test
