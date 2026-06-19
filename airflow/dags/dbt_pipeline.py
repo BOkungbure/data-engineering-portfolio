@@ -10,18 +10,17 @@ with DAG(
 ) as dag:
 
     dbt_seed = BashOperator(
-        task_id="dbt_seed",
-        bash_command="cd /C:/Users/Babs/Documents/Python/data-engineering-portfolio/data-pipeline/analytics && dbt seed"
+    task_id="dbt_seed",
+    bash_command="cd /opt/airflow/dbt && dbt seed --profiles-dir /home/airflow/.dbt"
     )
 
     dbt_run = BashOperator(
         task_id="dbt_run",
-        bash_command="cd /C:/Users/Babs/Documents/Python/data-engineering-portfolio/data-pipeline/analytics && dbt run"
+        bash_command="cd /opt/airflow/dbt && dbt run --profiles-dir /home/airflow/.dbt"
     )
 
     dbt_test = BashOperator(
         task_id="dbt_test",
-        bash_command="cd /C:/Users/Babs/Documents/Python/data-engineering-portfolio/data-pipeline/analytics && dbt test"
+        bash_command="cd /opt/airflow/dbt && dbt test --profiles-dir /home/airflow/.dbt"
     )
-
     dbt_seed >> dbt_run >> dbt_test
