@@ -1,87 +1,102 @@
-# 📊 Analytics API
+# 🚀 Data Engineering Portfolio
 
-A production-ready REST API built with **FastAPI** and **PostgreSQL** that serves business metrics to stakeholders — replacing manual Power BI data pulls with live, automated endpoints.
+Welcome! This repository showcases my transition from Data Analyst to Analytics Engineer through hands-on projects focused on data engineering, backend development, orchestration, analytics, and AI.
 
-![CI/CD](https://github.com/BOkungbure/data-engineering-portfolio/actions/workflows/api-tests.yml/badge.svg)
+## 👋 About
 
----
+I have a background in business and data analytics and am building production-inspired engineering skills using Python, SQL, FastAPI, dbt, Airflow, Docker, PostgreSQL, Power BI, and GitHub Actions.
 
-## 🎯 Project Goal
+## 🏗️ Portfolio Architecture
 
-Demonstrate how a data analyst can bridge into data/analytics engineering by building a real API that serves business metrics from a live database — complete with automated testing and CI/CD.
+```text
+        Data Sources
+             │
+             ▼
+      PostgreSQL Database
+             │
+      ┌──────┴──────┐
+      ▼             ▼
+ FastAPI API      dbt Models
+      │             │
+      └──────┬──────┘
+             ▼
+       Airflow Scheduler
+             ▼
+       Power BI Dashboard
+```
 
----
+## 📂 Projects
 
-## 🛠️ Tech Stack
-Category	Tool
-Framework	FastAPI
-Database	PostgreSQL (hosted on Neon)
-Testing	Pytest
-CI/CD	GitHub Actions
-Language	Python 3.11
-📡 API Endpoints
-Method	Endpoint	Description
-GET	/	Health check — confirms API is live
-GET	/metrics/revenue	Total revenue across all regions
-GET	/metrics/revenue/{region}	Total revenue for a specific region
-GET	/metrics/summary	All sales records from the database
-GET	/metrics/filter?start_date=&end_date=	Sales records filtered by date range
-GET	/metrics/trends	Month-over-month revenue growth % per region
-GET	/metrics/top-region	Highest revenue generating region
-💡 Example Responses
-GET /metrics/revenue/North
+### ✅ Analytics API
 
-{
-  "region": "North",
-  "total_revenue": 113000,
-  "currency": "USD"
-}
-GET /metrics/trends
+Status: Complete
 
-{
-  "trends": [
-    {
-      "region": "North",
-      "month": "2026-01",
-      "monthly_revenue": 52000,
-      "previous_month_revenue": null,
-      "growth_percentage": null
-    },
-    {
-      "region": "North",
-      "month": "2026-02",
-      "monthly_revenue": 61000,
-      "previous_month_revenue": 52000,
-      "growth_percentage": 17.31
-    }
-  ]
-}
-🚀 Running Locally
-1. Clone the repo:
+A FastAPI REST API that exposes business metrics from PostgreSQL, replacing manual reporting with live endpoints.
 
-git clone https://github.com/BOkungbure/data-engineering-portfolio.git
-cd data-engineering-portfolio/analytics-api
-2. Install dependencies:
+**Skills demonstrated**
+- FastAPI
+- REST API design
+- PostgreSQL
+- SQL
+- Pytest
+- GitHub Actions CI
+- Environment variables
+- API documentation
 
-pip install -r requirements.txt
-3. Create a .env file:
+### ✅ Analytics Engineering Pipeline
 
-DATABASE_URL=your_neon_connection_string_here
-4. Start the API:
+Status: Complete
 
-uvicorn main:app --reload
-5. Visit the interactive docs:
+An end-to-end analytics engineering pipeline using dbt, PostgreSQL, Airflow, Docker, and Power BI.
 
-http://localhost:8000/docs
-🧪 Running Tests
-pytest test_main.py -v
-📁 Project Structure
-analytics-api/
-├── main.py           # API endpoints
-├── test_main.py      # Automated tests
-├── requirements.txt  # Dependencies
-└── README.md         # You are here
-👤 Author
-Yomi Okungbure — Analytics Engineer in Progress
+**Skills demonstrated**
+- dbt
+- Data modeling
+- Data quality testing
+- Apache Airflow
+- Docker
+- Power BI
+- CI/CD
 
-LinkedIn | GitHub
+### 🚧 AI Analytics Assistant
+
+Status: Planned
+
+A natural-language analytics assistant that converts user questions into SQL using LLMs.
+
+Planned technologies:
+- Python
+- LangChain
+- OpenAI API
+- PostgreSQL
+
+## 🛠️ Technology Stack
+
+| Category | Technologies |
+|----------|--------------|
+| Languages | Python, SQL |
+| Databases | PostgreSQL |
+| Backend | FastAPI |
+| Analytics Engineering | dbt |
+| Orchestration | Apache Airflow |
+| BI | Power BI |
+| Containers | Docker |
+| CI/CD | GitHub Actions |
+| Version Control | Git & GitHub |
+
+## 📸 Recommended Screenshots
+
+Add screenshots for:
+- Swagger UI
+- dbt Docs lineage graph
+- Airflow DAG
+- Power BI dashboard
+- GitHub Actions passing workflow
+
+## 🎯 Career Goal
+
+This portfolio documents my progression toward Analytics Engineering, Data Engineering, and AI Engineering by building real-world projects that demonstrate modern engineering practices.
+
+## 📄 License
+
+MIT
