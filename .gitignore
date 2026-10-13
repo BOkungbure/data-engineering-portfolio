@@ -217,3 +217,27 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 airflow/docker-compose.yaml
+
+# Local secrets and machine-specific configuration
+.env.*
+.envrc
+keys.yaml
+keys.yml
+keys.env
+secrets.*
+credentials.*
+password.txt
+passwords.*
+token.txt
+client_secret.*
+access_token.*
+keys.json
+*.pem
+*.p12
+*.pfx
+*.key
+id_rsa*
+id_ed25519*
+service-account*.json
+.npmrc
+.pypirc
